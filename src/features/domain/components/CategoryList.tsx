@@ -25,7 +25,7 @@ const CategoryList: React.FC<CategoryListProps> = ({ onSelectCategory, selectedC
         className="w-full justify-start"
         onClick={() => onSelectCategory(null)}
       >
-        All Notes\
+        All Notes
       </Button>
       {categories?.map((category) => (
         <Button
