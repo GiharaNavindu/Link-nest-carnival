@@ -22,8 +22,10 @@ const Home: React.FC = () => {
     createNote(newNote);
   };
 
-  const handleUpdateNote = (updatedNote: Note) => {
-    updateNote(updatedNote);
+  const handleUpdateNote = (noteData: Omit<Note, 'id' | 'createdAt' | 'updatedAt'>) => {
+    if (editingNote) {
+      updateNote({ ...editingNote, ...noteData });
+    }
   };
 
   const handleEditNote = (noteId: string) => {
